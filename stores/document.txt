@@ -1,0 +1,8 @@
+install ruby:
+sudo apt-get install ruby-full
+check ruby version:
+ruby -v
+
+install rails:
+gem install rails
+rails --version 
