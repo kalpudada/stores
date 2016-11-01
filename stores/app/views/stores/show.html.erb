@@ -1,0 +1,29 @@
+<div id="overlay"></div>
+<div class="container center"> 
+	<img src="<%= @store.cover_image%>">
+	<br>
+	<div id="photo_gallery">
+		Photo gallery:
+		<img src="https://s17.postimg.org/vi1cfnw1r/TIKONA.jpg" width="100px">
+		<img src="https://s14.postimg.org/5mjta3a4x/SBL_FASHION.jpg" width="100px">
+		<img src="https://s16.postimg.org/b1spwynbp/02_Etched_in_Stone.jpg" width="100px">
+	</div>
+	<br>
+	<br>
+	<div>
+		Store hours:
+		<span><%= @store.opening_time.strftime("%I:%M %p") %> - <%= @store.closing_time.strftime("%I:%M %p")%></span>
+	</div>
+</div>
+<div class="container center" ><img src="" id="full_image"></div>
+<script type="text/javascript">
+	$('#photo_gallery img').click(function(){
+		$('#overlay').show();
+		$('#full_image').attr('src',$(this).attr('src'));
+		$('#full_image').show();
+	});
+	$('#overlay').click(function(){
+		$('#overlay').hide();
+		$('#full_image').hide();
+	});
+</script>

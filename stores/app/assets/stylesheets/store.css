@@ -1,0 +1,32 @@
+.container{
+	width: 1200px;
+	padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+.center{
+	text-align: center;
+}
+#overlay{
+  position: fixed;
+  top: 0px;
+  left:0px;
+  height: 100%;
+  width: 100%;
+  background:rgba(0,0,0,0.6);
+  z-index: 1;
+  display: none;
+}
+#full_image{
+	position: fixed;
+  top: 50px;
+  left: 400px;
+  margin: auto;
+  z-index: 2;
+  display: none;
+}
+.height{
+	height: 100px;
+}

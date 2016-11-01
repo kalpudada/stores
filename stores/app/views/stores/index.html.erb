@@ -1,0 +1,42 @@
+<div class="container center">
+	<%= link_to "Add New Store", :action => "new" %>
+</div>
+<div class="container center stores">
+	<%= render :partial => 'shared/stores', :locals => {:stores => @stores} %>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajaxSetup ({
+	    cache: true
+	  });
+	  var load_page = 1;
+	  var page = 1,
+	  loading = false;
+
+	  var totalCount = parseInt(<%= @total_count %>);
+	  var p_count = parseInt(<%= @limit_count %>);
+	  //Stop requests when all products are loaded
+	  var requests_no = Math.ceil(totalCount/p_count);
+
+	  function nearBottomOfPage() {
+	    return $(window).scrollTop() >  $(document).height()-$(window).height() - 400;
+	  }
+	  $(window).scroll(function(){
+		  if(nearBottomOfPage() && load_page == 1 && (parseInt(page)+1) <= requests_no) {
+	      loading=true;
+	      page++;
+				var base_url = document.URL;
+			  var next_page_url = base_url + "?page=" + page;
+
+			  $.ajax({
+			    url: next_page_url,
+			    type: 'get',
+			    dataType: 'script',
+			    success: function(data_value) {
+			      loading=false;
+			    }
+			  });
+			}
+		});
+	});
+</script>

@@ -1,0 +1,22 @@
+<%= form_for store_object, :url => { :action => form_action, :method => :post } do |f| %>
+	<table style="width: 700px"><tbody> 
+	  <tr>
+			<td> Cover Image: </td><td> <%= f.text_field :cover_image %> </td>
+		</tr>
+		<tr>
+			<td> City: </td><td> <%= f.text_field :city %> </td>
+		</tr>
+		<tr>
+			<td> Location: </td><td> <%= f.text_field :location %> </td>
+		</tr>
+		<tr>
+			<td> Opening time: </td><td> <%= f.text_field :opening_time %> </td>
+			<td> Format should be hh:mm:ss</td>
+		</tr>
+		<tr>
+			<td> Closing time: </td><td> <%= f.text_field :closing_time %> </td>
+			<td> Format should be hh:mm:ss</td>
+		</tr>
+ 	</tbody></table> 
+ 	<%= f.submit form_action.to_s.capitalize %>
+<% end %>
