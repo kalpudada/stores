@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  opening_time: 2016-11-01 07:19:21
+  closing_time: 2016-11-01 07:19:21
+  location: MyString
+  cover_image: MyString
+
+two:
+  city: MyString
+  opening_time: 2016-11-01 07:19:21
+  closing_time: 2016-11-01 07:19:21
+  location: MyString
+  cover_image: MyString
