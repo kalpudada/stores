@@ -8,4 +8,8 @@ class StoreTest < ActiveSupport::TestCase
 	  store = Store.new
 	  assert_not store.save, "Saved the store without a city"
 	end
+
+	test "stores_count" do
+		assert_equal 102,Store.count
+	end
 end

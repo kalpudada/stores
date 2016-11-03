@@ -13,3 +13,12 @@ two:
   closing_time: 2016-11-01 07:19:21
   location: MyString
   cover_image: MyString
+
+<% 1.upto(100) do |i| %>
+store_<%= i %>:
+  city: <%= 'city_#{i}' %>
+  opening_time: <%= i %>
+  closing_time: <%= i %>
+  location: <%= 'loc_#{i}' %>
+  cover_image: <%= 'cover_#{i}'%>
+<% end %>
